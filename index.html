@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BooksApp</title>
+        <html lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" >
+        <!-- Favicon -->
+        <link href="/assets/img/brand/favicon.png" rel="icon" type="image/png">
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+        <!-- Icons -->
+        <link href="/assets/vendor/nucleo/css/nucleo.min.css" >
+        <link href="/assets/vendor/@fontawesome/fontawesome-free/css/all.min.css">
+
+        <!-- Argon CSS -->
+        <link href="/assets/vendor/nucleo/css/nucleo.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    </head>
+    <body>
+         <div id="container">
+            <div id="nav">
+                <p>Temporary</p>
+                <img class="img" src="img.png" >
+                
+                <div id=icons>
+                    <i class='fas fa-cloud-download-alt' style="margin-right: 15%;"></i>
+                <i class='fas fa-money-check-alt' style="margin-right: 15%;"></i>
+                <i class="fas fa-bell" ></i>
+                </div>
+                
+            </div>
+            <div id="top-div">
+                <form id="form">
+                <label >Clients</label>
+                <input type="text" placeholder="    Search by customer name/email"> 
+                <button style="margin-left:3%">Search</button>
+                <button>Add New Customer</button>
+                </form>
+            </div>
+            <div id="bottom-div">
+                <table id="mytab" style="table-layout:fixed;">
+                    <th>CLIENT_ID</th>
+                    <th>CLOSING AGENT</th>
+                    <th>COMPANY</th>
+                    <th>ORDER</th>
+                    <th>INVOICE PAID</th>
+                    <th>INVOICE PENDING</th>
+                </table>
+                <table id="mytable"></table>
+            </div>
+         </div>
+
+         <script>
+             
+             const data = [
+     { 
+        "name": "Nandha",
+        "id" : "1",
+        "company" : "BooksApp",
+        "orderId": "1", 
+        "invoicepaid": "250",
+        "invoicePending": "280"
+    },
+    { 
+        "name": "Ashley",
+        "id" : "2",
+        "company" : "NotarizedDocs",
+        "orderId": "13", 
+        "invoicepaid": "150",
+        "invoicePending": "180"
+    },
+    { 
+        "name": "Rajal",
+        "id" : "4",
+        "company" : "Conneqtly",
+        "orderId": "14", 
+        "invoicepaid": "500",
+        "invoicePending": "580"
+    }
+
+]
+
+var html = "<table border='1|1'>";
+        
+for (var i = 0; i < data.length; i++) {
+    html+="<tr >";
+    html+="<td style='color:#61A4F4;font-weight:555'>"+data[i].id+"</td>";
+    html+="<td>"+data[i].name+"</td>";
+    html+="<td>"+data[i].company+"</td>";
+    html+="<td>"+data[i].orderId+"</td>";
+    html+="<td style='color:grey'>"+data[i].invoicepaid+"</td>";
+    html+="<td>"+data[i].invoicePending +'<i class="fas fa-money-check-alt" style="color:rgba(0, 0, 0, 0.620);margin-left:25%;float:right";></i>' +"</td>";
+    
+    html+="</tr>";
+
+}
+html+="</table>";
+document.getElementById("mytable").innerHTML = html;
+         </script>
+    </body>
+</html> 
